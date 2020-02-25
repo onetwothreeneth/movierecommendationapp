@@ -1,0 +1,19 @@
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <p>
+    Find what trailer to watch. <br>
+    <small>search for movie titles, artists, directors ang genres.</small>
+  </p>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+  
+  <div class="cards">
+    <div class="items" *ngFor="let x of data" [navPush]="details" [navParams]="x">
+      <img src="{{ asset }}/{{ x.photo }}">
+      <small>{{ x.title | slice:0:40 }}...</small>
+    </div> 
+  </div>
+</ion-content>

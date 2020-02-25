@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>   
+  <div class="head">
+    <div class="left">
+      <img *ngIf="user.profile == null" src="assets/default.png" #ImgPreview>
+      <img *ngIf="user.profile != null" src="{{ asset }}/uploads/{{ user.profile }}" #ImgPreview>
+    </div>
+    <div class="right">
+      Name: {{ user.name }} <br>
+      Username: {{ user.username }} <br>
+      Email: {{ user.email }} <br>
+      Id : {{ user.id }} <br>
+      <ul>
+        <li [navPush]="profile">
+          Edit Profile
+          <ion-icon name="arrow-dropright"></ion-icon>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="body">
+    <ul>
+      <li [navPush]="watch">
+        Watch List
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </li>
+      <li [navPush]="history">
+        History
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </li>
+      <li [navPush]="reviews" [navParams]="Dratings">
+        Reviews & Ratings
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </li> 
+      <li (click)="logout()">
+        Logout
+        <ion-icon name="arrow-dropright"></ion-icon>
+      </li>
+    </ul>
+  </div>
+</ion-content>

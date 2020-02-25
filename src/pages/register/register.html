@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> 
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<h3 *ngIf="!verify">REGISTER</h3>
+	<h3 *ngIf="verify">VERIFY</h3>
+	<ion-list>
+		<ion-item>
+			<ion-input type="text" placeholder="Name" [(ngModel)]="data.name"></ion-input>
+		</ion-item> 
+		<ion-item>
+			<ion-input type="number" placeholder="Age" [(ngModel)]="data.age"></ion-input>
+		</ion-item> 
+		<ion-item>
+			<ion-input type="email" placeholder="Email Address" [(ngModel)]="data.email"></ion-input>
+		</ion-item> 
+		<ion-item>
+			<ion-input type="text" placeholder="Username" [(ngModel)]="data.username"></ion-input>
+		</ion-item> 
+		<ion-item>
+			<ion-input type="password" placeholder="Password" [(ngModel)]="data.password"></ion-input>
+		</ion-item> 
+		<ion-item>
+			<ion-input type="password" placeholder="Re-type Password" [(ngModel)]="data.repass"></ion-input>
+		</ion-item> 
+		<ion-item *ngIf="verify">
+			<ion-input type="text" placeholder="Verification Code (sent in email)" [(ngModel)]="data.verification"></ion-input>
+		</ion-item> 
+	</ion-list> 
+	<button ion-button *ngIf="!verify" (click)="register()">SIGN Up</button> 
+	<button ion-button *ngIf="verify" (click)="register()">Verify</button> 
+</ion-content>

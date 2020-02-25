@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    	Nearby Cinema
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+	<div class="theaters" *ngFor="let x of data">
+		<span class="title">{{ x.name }}</span>
+		<span class="ratings">
+			<!-- <span class="open" *ngIf="x.opening_hours.open_now == true">OPEN NOW</span>
+			<span class="closed" *ngIf="x.opening_hours.open_now == false">CLOSED</span>
+			- --> {{ x.rating }} ratings
+		</span>
+		<span class="address">
+			<ion-icon name="map"></ion-icon>
+			{{ x.vicinity }}
+		</span>
+	</div>
+</ion-content>

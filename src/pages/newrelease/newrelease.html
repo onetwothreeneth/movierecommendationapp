@@ -1,0 +1,68 @@
+<ion-header>  
+  <ion-toolbar color="primary"> 
+    <ion-title start>
+      <img src="assets/icon.png" width="25%">
+    </ion-title>  
+    <ion-buttons end>
+      <button ion-button icon-only (click)="AR()">
+        <ion-icon name="radio-button-on"></ion-icon>
+      </button>
+      <button ion-button icon-only  [navPush]="menu">
+        <ion-icon name="contact"></ion-icon>
+      </button>
+      <button ion-button icon-only  [navPush]="search">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <h2><span class="blue">NEW RELEASE</span> MOVIES</h2> 
+ 
+  <ion-list class="filter">  
+    <ion-item>
+      <ion-label>Sort</ion-label>
+      <ion-select placeholder="Select One" (ionChange)="filterItems()" [(ngModel)]="filter.sort">
+        <ion-option value="date">Release Date</ion-option>
+        <ion-option value="ratings">Ratings</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Genre</ion-label>
+      <ion-select placeholder="Select One" (ionChange)="filterItems()" [(ngModel)]="filter.genre">
+        <ion-option value="All">All</ion-option> 
+        <ion-option value="Action">Action</ion-option>
+        <ion-option value="Comedy">Comedy</ion-option>
+        <ion-option value="Romance">Romance</ion-option>
+        <ion-option value="Horror">Horror</ion-option>
+        <ion-option value="Adventure">Adventure</ion-option> 
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categories</ion-label>
+      <ion-select placeholder="Select One" (ionChange)="filterItems()" [(ngModel)]="filter.category">
+        <ion-option value="All">All</ion-option>
+        <ion-option value="Indie">Indie</ion-option>
+        <ion-option value="Local">Local</ion-option>
+        <ion-option value="Foreign">Foreign</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  
+  <div class="cards">
+    <div class="items" *ngFor="let x of data" [navPush]="details" [navParams]="x">
+      <img src="{{ asset }}/{{ x.photo }}">
+      <div class="details">
+        <div class="ratings">
+          <ion-icon name="star"></ion-icon> 
+          <span>{{ x.ratings }}.0</span>
+        </div>
+        <div class="title">
+          <span>{{ x.title | slice:0:13 }}</span> <span *ngIf="x.title.length >= 13">...</span>
+        </div>
+      </div>
+    </div> 
+  </div> 
+</ion-content>

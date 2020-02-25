@@ -1,0 +1,20 @@
+page-video {
+	.content-md{ 
+		background-color: black !important;
+	}
+	ion-content{
+		background-color: black;
+	}
+
+	video{
+		width: 100%;
+		float: left;
+		margin-top: 35%;
+	}
+	h5,ol,ol li,ol li b{
+		color: white;
+	}
+	ol li{
+		margin-bottom: 2%;
+	}
+}

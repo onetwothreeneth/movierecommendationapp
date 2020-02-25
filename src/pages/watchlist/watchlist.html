@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>  
+  <h2><span class="blue">WATCH</span>LIST</h2>
+  <div class="filter"> 
+    <span (click)="sort('All')">All</span> |
+    <span (click)="sort('Action')">Action</span> |
+    <span (click)="sort('Comedy')">Comedy</span> |
+    <span (click)="sort('Romance')">Romance</span> |
+    <span (click)="sort('Horror')">Horror</span> |
+    <span (click)="sort('Adventure')">Adventure</span> 
+  </div>
+  <span class="filtertext">Filtered : {{ filter }}</span>
+  
+  <div class="cards" *ngIf="filter != 'All'">
+    <div class="items" *ngFor="let x of data" [navPush]="details" [navParams]="x">
+      <div *ngIf="filter == x.genre">
+        <img src="{{ asset }}/{{ x.photo }}">
+        <div class="details">
+          <div class="ratings">
+            <ion-icon name="star"></ion-icon> 
+            <span>{{ x.ratings }}.0</span>
+          </div>
+          <div class="title">
+            <span>{{ x.title | slice:0:13 }}</span> <span *ngIf="x.title.length >= 13">...</span>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div> 
+  <div class="cards" *ngIf="filter == 'All'">
+    <div class="items" *ngFor="let x of data" [navPush]="details" [navParams]="x"> 
+      <img src="{{ asset }}/{{ x.photo }}">
+      <div class="details">
+        <div class="ratings">
+          <ion-icon name="star"></ion-icon> 
+          <span>{{ x.ratings }}.0</span>
+        </div>
+        <div class="title">
+          <span>{{ x.title | slice:0:13 }}</span> <span *ngIf="x.title.length >= 13">...</span>
+        </div>
+      </div> 
+    </div> 
+  </div> 
+</ion-content>

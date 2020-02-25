@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    	{{ data['title'] }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="details">
+		<div class="left">
+			<img src="{{ asset }}/{{ data['photo'] }}">
+		</div>
+		<div class="right">
+			<ul> 
+				<li>
+					<small>Genre</small>
+					<span>{{ data['genre'] }}</span>
+				</li>
+				<li>
+					<small>Director</small>
+					<span>{{ data['director'] }}</span>
+				</li>
+				<li>
+					<small>Main Casts</small>
+					<span>{{ data['casts'] }}</span>
+				</li>
+				<li>
+					<small>Release Date</small>
+					<span>{{ data['release_date'] }}</span>
+				</li>
+				<li>
+					<small>Category</small>
+					<span>{{ data['category'] }}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="counter">
+		<ion-icon class="watch" name="heart" (click)="addToWatchList(data['id'])"></ion-icon>
+		<ion-icon class="review" name="chatbubbles" [navPush]="reviewersPage" [navParams]="data"></ion-icon>
+		<span *ngIf="rating == null">
+			No ratings yet
+		</span>
+		<span *ngIf="rating != null">
+			<ion-icon class="star" name="star"></ion-icon> 
+<!-- 			<ion-icon *ngIf="rating >= 1" class="star" name="star"></ion-icon> 
+			<ion-icon *ngIf="rating >= 2" class="star" name="star"></ion-icon>
+			<ion-icon *ngIf="rating >= 3" class="star" name="star"></ion-icon>
+			<ion-icon *ngIf="rating >= 4" class="star" name="star"></ion-icon>
+			<ion-icon *ngIf="rating >= 5" class="star" name="star"></ion-icon>
+ 
+			<ion-icon *ngIf="(5-rating) >= 1" class="star-o" name="star"></ion-icon> 
+			<ion-icon *ngIf="(5-rating) >= 2" class="star-o" name="star"></ion-icon>
+			<ion-icon *ngIf="(5-rating) >= 3" class="star-o" name="star"></ion-icon>
+			<ion-icon *ngIf="(5-rating) >= 4" class="star-o" name="star"></ion-icon>
+			<ion-icon *ngIf="(5-rating) >= 5" class="star-o" name="star"></ion-icon> -->
+
+			{{ rating }}.0
+  		</span>
+	</div>
+	<div class="trailer">
+		<small>Synopsis</small>
+		<p>{{ data['synopsis'] }}</p>
+		<br><br>
+
+		<div *ngIf="showReview"> 
+			<p>Write Review/Rating</p>
+			<ion-list>
+				<ion-item>
+					<ion-label>Choose rating</ion-label>
+					<ion-select [(ngModel)]="paramsx.stars">
+						<ion-option>5</ion-option>
+						<ion-option>4</ion-option>
+						<ion-option>3</ion-option>
+						<ion-option>2</ion-option>
+						<ion-option>1</ion-option>
+					</ion-select>
+				</ion-item> 
+				<ion-item>
+					<ion-textarea placeholder="Write your review" [(ngModel)]="paramsx.review" rows="5"></ion-textarea>
+				</ion-item> 
+			</ion-list> 
+			<button ion-button class="btn-dark" (click)="rate()">Post Review</button>
+		</div>
+		<div *ngIf="!showReview"> 
+			<p>Review is still closed !</p>
+		</div>
+
+		<br><br><br><br><br>
+		<p>Watch Trailer</p>
+		<video controls="" width="100%;" controls="nodownload">
+			<source src="{{ asset }}/{{ data['trailer'] }}" type="">
+		</video>
+		<button ion-button class="btn-light" [navPush]="placePage" [navParams]="places">Nearby Cinema</button> 
+		<br><br>
+	</div>
+	<br><br><br><br><br>
+</ion-content>

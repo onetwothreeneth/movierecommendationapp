@@ -1,0 +1,54 @@
+page-search {
+	ion-content{
+		background-color: black !important;
+
+		.searchbar-md .searchbar-input{
+			background-color: #666666 !important;
+			border-radius: 1500px;
+		}
+
+		p{
+			margin-left: 5%;
+			font-size: 1.2em;
+			color: white;
+			font-weight: bolder;
+
+			small{
+				color: #8e8e8e !important;
+				font-size: 0.8em !important;
+				font-weight: normal !important;
+			}
+		}
+			
+		.searchbar-md .searchbar-input{
+			color:white !important;
+		}
+
+		.cards{
+			width: 100%;
+			float: left;
+			margin: 0;
+			padding: 0;
+		
+			.items{
+				width: 33.33%;
+				float: left;
+				margin: 0;
+				padding: 0;
+				margin-bottom: 5% !important;
+
+				img{	
+					width: 100% !important;
+					height: 50vw;
+					float: left;
+				}
+				small{
+					width: 100%;
+					float: left;
+					color: white;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content> 
+  <h2><span class="blue">RATINGS</span> & <span class="blue">REVIEWS</span></h2>
+  <div class="cards"> 
+    <div class="reviewers" *ngFor="let x of data">
+      <div *ngIf="x.sentiment != null && (((x.rating+5)+x.sentiment)/2) > 0">
+        <img src="{{ asset }}/{{ x.photo }}"> 
+        <div class="item">
+          <span class="name">{{ x.title }}</span><br>
+          <ion-icon class="star" name="star"></ion-icon> 
+<!--           <ion-icon *ngIf="x.rating >= 1" class="star" name="star"></ion-icon> 
+          <ion-icon *ngIf="x.rating >= 2" class="star" name="star"></ion-icon>
+          <ion-icon *ngIf="x.rating >= 3" class="star" name="star"></ion-icon>
+          <ion-icon *ngIf="x.rating >= 4" class="star" name="star"></ion-icon>
+          <ion-icon *ngIf="x.rating >= 5" class="star" name="star"></ion-icon>
+     
+          <ion-icon *ngIf="(5-x.rating) >= 1" class="star-o" name="star"></ion-icon> 
+          <ion-icon *ngIf="(5-x.rating) >= 2" class="star-o" name="star"></ion-icon>
+          <ion-icon *ngIf="(5-x.rating) >= 3" class="star-o" name="star"></ion-icon>
+          <ion-icon *ngIf="(5-x.rating) >= 4" class="star-o" name="star"></ion-icon>
+          <ion-icon *ngIf="(5-x.rating) >= 5" class="star-o" name="star"></ion-icon> -->
+          <font color="white">{{ x.rating }}.0</font> 
+          <span class="link" [navPush]="reviewersPage" [navParams]="x">See Reviews...</span>
+        </div> 
+      </div>
+    </div>
+  </div>
+</ion-content>

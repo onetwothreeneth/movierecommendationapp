@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content> 
+  <h2><span class="blue">HISTORY</span></h2>
+  <div class="cards">
+    <div class="items" *ngFor="let x of data" [navPush]="details" [navParams]="x">
+      <img src="{{ asset }}/{{ x.photo }}">
+    </div> 
+  </div>
+</ion-content>

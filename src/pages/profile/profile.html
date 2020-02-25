@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Edit Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>   
+  <div class="head">
+    <div class="left">
+      <img *ngIf="user.profile == null" src="assets/default.png" #ImgPreview>
+      <img *ngIf="user.profile != null" src="{{ asset }}/uploads/{{ user.profile }}" #ImgPreview>
+    </div>
+    <div class="right">
+      Name: {{ user.name }} <br>
+      Username: {{ user.username }} <br>
+      Email: {{ user.email }}
+    </div>
+  </div> 
+  <ion-list>
+    <ion-item> 
+      <ion-input type="file" accept="image/*"  (change)="changeListener($event)" #InputFile></ion-input> 
+    </ion-item>     
+    <ion-item>
+      <ion-input type="text" placeholder="Name" [(ngModel)]="params.name"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input type="number" placeholder="Age" [(ngModel)]="params.age"></ion-input>
+    </ion-item>  
+    <ion-item>
+      <ion-input type="text" placeholder="Username" [(ngModel)]="params.username"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="params.password"></ion-input>
+    </ion-item>  
+  </ion-list> 
+  <button ion-button class="btn-light" [navPush]="favorite">Genre Profile</button> 
+  <button ion-button class="btn-primary" (click)="save()">Save</button> 
+</ion-content>

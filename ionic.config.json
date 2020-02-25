@@ -1,0 +1,24 @@
+{
+  "name": "viceapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [ 
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost/icine/web/api"
+    },
+    {
+      "path": "/apix",
+      "proxyUrl": "http://icine.website/app/api"
+    },
+    {
+      "path": "/map",
+      "proxyUrl": "https://maps.googleapis.com/"
+    }
+  ],
+  "id": "47182aef"
+}
+
+

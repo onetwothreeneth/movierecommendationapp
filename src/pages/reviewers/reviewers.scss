@@ -1,0 +1,193 @@
+page-reviewers {
+	ion-content{
+		background-color: black !important;
+
+		.reviewers{
+			width: 100%;
+			float: left;
+
+			img{    
+				width: 10%;
+			    float: left;
+			    border-radius: 1500px;
+			    margin-right: 2%;
+			}
+			.item{ 
+				width: 80%;
+				float: left;
+				margin-bottom: 5%;
+				padding-bottom: 5%;
+				border-bottom: 1px solid #2d2d2d;
+
+				.name{
+					width: 100%;
+					float: left;
+					font-weight: bolder;
+					color: white;
+				}
+
+				ion-icon{
+					color:yellow;
+					font-size: 1em;
+				}
+
+				.review{
+					width: 100%;
+					float: left;
+					font-style: italic;
+					text-align: left;
+					color: white;
+				}
+			}
+		}
+
+		.list-md .item-input:last-child, .item-inner, .list-md .item-input{
+			border:none !important;
+		}
+		ion-list .input-has-focus,ion-list .item-input-has-focus{
+			border:none !important;
+			box-shadow: none !important;
+		}
+		ion-item{  
+			background-color: black !important;
+			margin-bottom: 2%;
+
+			ion-select{
+				background-color: transparent;
+				color:white;
+			}
+			ion-input,ion-textarea{
+				background-color: #565656 !important;
+				color: white !important;
+				border:none;
+				outline: none;
+				/*border-radius: 1500px;*/
+				width: 100%;
+
+				input,textarea,select{
+					margin: 6px 8px !important;
+				}
+			}
+		}
+
+		.details{
+			width: 100%;
+			float: left;
+
+			.left{
+				width: 50%;
+				float: left;
+
+				img{
+					width: 100%;
+					border: 3px solid white;
+				}
+			}
+
+			.right{
+				width: 50%;
+				float: left;
+				
+
+				ul{
+					width: 100%;
+					float: left;
+					padding: 0;
+					padding-left: 5% !important;
+					margin: 0;
+
+					li{
+
+						list-style-type: none;
+
+						small{
+							color: #7b7a7a;
+							font-size: 0.8em;
+							width: 100%; 
+							float: left;
+						}
+
+						span{
+							font-size: 1em;
+							color: white;
+							width: 100%;
+							float: left;
+							margin-bottom: 5%;
+						}
+					}
+				}
+			}
+		}
+
+		.counter{
+			width: 100%;
+			float: left;
+			margin-top: 5%;
+			margin-bottom: 5%;
+
+			span{
+				color: white;
+				font-style: italic;
+			}
+			.watch{
+				color:white;
+				font-size: 1.4em;
+				margin-right: 5%;
+			}
+			.review{
+				color: white;
+				font-size: 1.4em;
+				margin-right: 5%;
+			}
+			.star{
+				color:yellow;
+				font-size: 1.4em; 
+			} 
+			.star-o{
+				color:white;
+				font-size: 1.4em; 
+			} 
+		}
+
+		.trailer{
+			width: 100%;
+			float: left;
+			margin-bottom: 50%;
+
+			small{
+				width: 100%;
+				float: left;
+				color: #7b7a7a;
+				font-size: 0.8em;
+			}
+			p{
+				color:white;
+				font-size: 1.2em;
+			}
+
+			video{
+				height: 50vw;
+			}
+		}
+
+		.btn-light{
+			color:black;
+			float: left;
+			width: 70%;
+			margin-top: 10%;
+			margin-left: 15% !important;
+			margin-right: 15% !important;
+			border-radius: 1500px !important;
+			background-image: linear-gradient(to bottom,#f8f8f8,#8a8a8a);
+		}
+
+		.btn-dark{
+			float: left;
+			width: 70%;
+			margin-left: 15% !important;
+			margin-right: 15% !important;
+			border-radius: 1500px !important;
+			background-image: linear-gradient(to bottom,#009bf4,#005586);
+		}
+	}
+}

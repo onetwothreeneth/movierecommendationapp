@@ -1,0 +1,17 @@
+<ion-content padding>
+	<h3>LOGIN</h3>
+	<ion-list>
+		<ion-item>
+			<ion-input type="text" placeholder="Username" [(ngModel)]="data.username"></ion-input>
+		</ion-item> 
+		<ion-item>
+			<ion-input type="password" placeholder="Password" [(ngModel)]="data.password"></ion-input>
+		</ion-item> 
+	</ion-list>
+	<p [navPush]="forgotPage">Forgot Password?</p>
+	<button ion-button (click)="login()">SIGN IN</button>
+	<div class="bottom" [navPush]="register">
+		<small>Do you have an account ?</small><br>
+		<a>SIGN UP</a>
+	</div>
+</ion-content>

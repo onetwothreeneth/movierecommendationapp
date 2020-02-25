@@ -1,0 +1,27 @@
+<ion-content padding>
+	<p class="welcome">Hi {{ name }}! <br> For better assistance, Please fill-in additional profile information.</p>
+	<p class="title">Select your favorite Movie Genre/s </p>
+	<ion-list>
+		<ion-item>
+			<ion-label>Action</ion-label>
+			<ion-checkbox [(ngModel)]="genre['Action']"></ion-checkbox>
+		</ion-item>  
+		<ion-item>
+			<ion-label>Comedy</ion-label>
+			<ion-checkbox [(ngModel)]="genre['Comedy']"></ion-checkbox>
+		</ion-item>  
+		<ion-item>
+			<ion-label>Romance</ion-label>
+			<ion-checkbox [(ngModel)]="genre['Romance']"></ion-checkbox>
+		</ion-item>  
+		<ion-item>
+			<ion-label>Horror</ion-label>
+			<ion-checkbox [(ngModel)]="genre['Horror']"></ion-checkbox>
+		</ion-item>  
+		<ion-item>
+			<ion-label>Adventure</ion-label>
+			<ion-checkbox [(ngModel)]="genre['Adventure']"></ion-checkbox>
+		</ion-item>  
+	</ion-list> 
+	<button ion-button (click)="save()">Next</button> 
+</ion-content>

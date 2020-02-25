@@ -1,0 +1,60 @@
+page-history {
+	ion-content{
+		background-color: black !important;
+
+		h2{
+			color: white;
+			text-align: center;
+			font-size: 1.3em;
+			margin-top: 0 !important;
+			font-weight: bolder;
+
+			ion-icon{
+				margin-left: 2%;
+				font-size: 1em;
+			}
+
+			.blue{
+				color: #10a8e1;
+			}
+		}
+		
+		.text{
+			color: white;
+			text-align: center;
+		}
+		
+		button{
+			float: left;
+			width: 70%;
+			margin-left: 15% !important;
+			margin-right: 15% !important;
+			border-radius: 1500px !important;
+			background-image: linear-gradient(to bottom,#009bf4,#005586);
+		}
+
+		.cards{
+			width: 100%;
+			float: left;
+			margin: 0;
+			padding: 0;
+			padding-left: 2%;
+			padding-right: 2%;
+		
+			.items{
+				padding-bottom: 4% !important; 
+				padding-top: 5% !important; 
+				border-bottom: 1px solid white !important; 
+				width: 33.33%;
+				float: left;
+				margin: 0;
+				padding: 0;
+
+				img{	
+					width: 100% !important;
+					height: 50vw;
+				}
+			}
+		}
+	}
+}
